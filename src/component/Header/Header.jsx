@@ -13,7 +13,7 @@ const Header = () => {
                 <a href="/about" className='pl-4 hover:text-cyan-500'>About</a>
             </div>
             </div>
-            <hr className='my-8' />
+            <hr className='mt-8'/>
         </div>
     );
 };

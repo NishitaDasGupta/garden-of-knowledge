@@ -7,12 +7,7 @@
         "blogTitle": "How to get your first job as a self-taught programmer",
         "publishDate": "14/03/2023",
         "readTime": 5,
-        "hashtag": [
-            {"0":"beginner"},
-            {"1":"programmer"}
-    ]
-        
-        
+        "hashtag": ["beginner","programmer"]
     },
     {
         "id": "124e13b9-2d54-4b2f-a74d-a77b62d6cad",
@@ -22,11 +17,9 @@
         "blogTitle": "Understanding JavaScript Mouse Events By Examples",
         "publishDate": "01/03/2021",
         "readTime": 15,
-        "hashtag": [
-            {"0":"js"},
-            {"1":"mouseevents"},
-            {"2":"programming"}
-    ]
+        "hashtag": ["js","mouseevents","programming"]
+       
+    
 },
 
 {
@@ -37,11 +30,8 @@
     "blogTitle": "Comparing Modern JavaScript Event Handling Techniques: addEventListener vs HTML Event Handlers",
     "publishDate": "11/07/2022",
     "readTime": 10,
-    "hashtag": [
-        {"0":"js"},
-        {"1":"htmlEventHandlers"},
-        {"2":"addEventListener"}
-]
+    "hashtag": ["js","htmlEventHandlers","addEventListener"]
+    
 },
 {
     "id": "124e13b9-2d54-4b2f-a74d-a77b62d6mad",
@@ -51,9 +41,6 @@
     "blogTitle": "What is the DOM? An Introduction for Non-Programmers",
     "publishDate": "03/08/2022",
     "readTime": 12,
-    "hashtag": [
-        {"0":"js"},
-        {"1":"dom"}
-]
+    "hashtag": ["js","dom"]
 }
 ]
