@@ -3,11 +3,17 @@ import React from 'react';
 const Header = () => {
     return (
         <div>
-            <h2 className="text-3xl font-bold underline">Garden Of Knowledge</h2>
-            <a href="/home">Home</a>
-            <a href="/libraryPrograms">Library Programs</a>
-            <a href="/blogroll">Blogroll</a>
-            <a href="/about">About</a>
+            <div className='flex justify-between items-center'>
+            <h2 className="text-3xl font-bold "
+            >Garden Of Knowledge</h2>
+            <div className='text-lg font-bold '>
+                <a href="/home" className='hover:text-cyan-500' >Home</a>
+                <a href="/libraryPrograms" className='pl-4 hover:text-cyan-500'>Library Programs</a>
+                <a href="/blogroll" className='pl-4 hover:text-cyan-500'>Blogroll</a>
+                <a href="/about" className='pl-4 hover:text-cyan-500'>About</a>
+            </div>
+            </div>
+            <hr className='my-8' />
         </div>
     );
 };
