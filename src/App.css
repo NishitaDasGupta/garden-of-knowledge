@@ -2,7 +2,12 @@
   max-width: 1280px;
  
 }
-
+.body {
+  font-family: 'Exo 2';
+font-style: normal;
+font-weight: 700;
+line-height: 160%;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
