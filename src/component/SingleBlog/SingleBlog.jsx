@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
-import './Blog.css'
+import './SingleBlog.css'
 
-const Blog = (props) => {
+const SingleBlog = (props) => {
 
     const {id, authorImg, authorName, blogTitle, coverImg, hashtag, publishDate, readTime } = props.blog;
     const handleBookmark = props.handleBookmark;
@@ -38,4 +38,4 @@ const Blog = (props) => {
     );
 };
 
-export default Blog;
+export default SingleBlog;

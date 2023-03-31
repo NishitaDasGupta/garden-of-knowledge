@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Blog from '../Blog/Blog';
+import SingleBlog from '../SingleBlog/SingleBlog';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Blogs.css'
@@ -36,7 +36,12 @@ const Blogs = () => {
         for (const id in storedBlogList) {
        const detailsOfID = blogs.find(blog=> blog.id === id);
        if(detailsOfID){
-        arrayOfDetailsOfID.push(detailsOfID);
+        const quantity = storedBlogList[id];
+        for (let index = 0; index < quantity; index++) {
+            arrayOfDetailsOfID.push(detailsOfID);
+            
+        }
+        
        }
         }
         setCartBlogs(arrayOfDetailsOfID);
@@ -65,12 +70,12 @@ const Blogs = () => {
         <div className='grid grid-cols-1 md:grid-cols-16 gap-6 relative'>
             <div className="blogs-container">
                 {
-                    blogs.map((blog) => <Blog
+                    blogs.map((blog) => <SingleBlog
                         blog={blog}
                         handleBookmark={handleBookmark}
                         handleMarkAsRead={handleMarkAsRead}
                         key={blog.id}
-                    ></Blog>)
+                    ></SingleBlog>)
                 }
             </div>
             <div>
