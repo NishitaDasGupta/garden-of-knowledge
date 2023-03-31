@@ -3,7 +3,7 @@ import Blog from '../Blog/Blog';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Blogs.css'
-import { addToDb } from '../../../public/fakedb';
+import { addToDb, addToMarkReadTime } from '../../../public/fakedb';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -15,17 +15,17 @@ const Blogs = () => {
        if(duplicate){
         toast("You Have Already Bookmarked This Blog!!");
        }
-       else{
+     
         const newCartBlogs = [...cartBlogs, blog];
         setCartBlogs(newCartBlogs);
         addToDb(blog.id);
-       }
+       
       
     }
     const handleMarkAsRead = (readTime) => {
         const newMarkReadTime = markReadTime + readTime;
         setMarkReadTime(newMarkReadTime);
-        
+        addToMarkReadTime(newMarkReadTime);
     }
     useEffect(() => {
         fetch('products.json')

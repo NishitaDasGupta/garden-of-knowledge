@@ -3,10 +3,16 @@ const addToDb = id => {
     let blogsCart = getblogsCart();
     // add quantity
     const quantity = blogsCart[id];
-    blogsCart[id] = 1;
+    if (!quantity) 
+    { blogsCart[id] = 1;}
+    else {
+        const newQuantity = quantity + 1;
+        blogsCart[id] = newQuantity;
+    }
     localStorage.setItem('blogs-Cart', JSON.stringify(blogsCart));
 }
-
+const addToMarkReadTime = time => {
+    localStorage.setItem('mark-read-time', JSON.stringify(time));}
 const removeFromDb = id => {
     const blogsCart = getblogsCart();
     if (id in blogsCart) {
@@ -32,6 +38,7 @@ const deleteblogsCart = () => {
 
 export {
     addToDb,
+    addToMarkReadTime,
     removeFromDb,
     getblogsCart,
     deleteblogsCart
