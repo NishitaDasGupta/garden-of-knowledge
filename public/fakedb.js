@@ -13,6 +13,7 @@ const addToDb = id => {
 }
 const addToMarkReadTime = time => {
     localStorage.setItem('mark-read-time', JSON.stringify(time));}
+    
 const removeFromDb = id => {
     const blogsCart = getblogsCart();
     if (id in blogsCart) {
@@ -31,6 +32,16 @@ const getblogsCart = () => {
     }
     return blogsCart;
 }
+const getMarkedRead = () => {
+    let blogsCart ;
+
+    //get the blogs cart from local storage
+    const storedCart = localStorage.getItem('mark-read-time');
+    if (storedCart) {
+        blogsCart = JSON.parse(storedCart);
+    }
+    return blogsCart;
+}
 
 const deleteblogsCart = () => {
     localStorage.removeItem('blogs-Cart');
@@ -41,5 +52,6 @@ export {
     addToMarkReadTime,
     removeFromDb,
     getblogsCart,
+    getMarkedRead,
     deleteblogsCart
 }
