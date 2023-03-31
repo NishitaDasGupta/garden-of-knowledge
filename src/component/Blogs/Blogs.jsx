@@ -3,7 +3,7 @@ import SingleBlog from '../SingleBlog/SingleBlog';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Blogs.css'
-import { addToDb, addToMarkReadTime, getMarkedRead, getblogsCart } from '../../../public/fakedb';
+
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -17,12 +17,12 @@ const Blogs = () => {
         }
         const newCartBlogs = [...cartBlogs, blog];
         setCartBlogs(newCartBlogs);
-        addToDb(blog.id);
+      
     }
     const handleMarkAsRead = (readTime) => {
         const newMarkReadTime = markReadTime + readTime;
         setMarkReadTime(newMarkReadTime);
-        addToMarkReadTime(newMarkReadTime);
+       
     }
     useEffect(() => {
         fetch('products.json')
@@ -30,42 +30,7 @@ const Blogs = () => {
             .then(data => setBlogs(data))
     }, [])
 
-    useEffect(() => {
-        const storedBlogList = getblogsCart();
-        let arrayOfDetailsOfID = [];
-        for (const id in storedBlogList) {
-       const detailsOfID = blogs.find(blog=> blog.id === id);
-       if(detailsOfID){
-        const quantity = storedBlogList[id];
-        for (let index = 0; index < quantity; index++) {
-            arrayOfDetailsOfID.push(detailsOfID);
-            
-        }
-        
-       }
-        }
-        setCartBlogs(arrayOfDetailsOfID);
-    },[blogs])
-    // useEffect(()=>{
-    //     const storedData = getblogsCart();
-    //     const savedCart = [];
-    //     //console.log(storedData);
-    // for (const id in storedData) {
-    //    const addedBlogs = products.find(product => product.id === id);
-       
-    //    if(addedProduct)
-    //    {
-    //     const quantity = storedData[id];
-    //     addedProduct.quantity = quantity;
-    //     savedCart.push(addedProduct);
-    //    }
-    // }
-    // setCart(savedCart);
-    //   },[products])
-    useEffect(() => {
-        const storedMarkReadTime = getMarkedRead();
-        setMarkReadTime(storedMarkReadTime);
-    }, [markReadTime])
+  
     return (
         <div className='grid grid-cols-1 md:grid-cols-16 gap-6 relative'>
             <div className="blogs-container">
