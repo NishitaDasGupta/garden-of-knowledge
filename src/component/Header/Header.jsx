@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div>
             <div className='flex justify-between items-center'>
-            <h2 className="text-3xl font-bold "
+            <h2 className="text-4xl font-bold "
             >Garden Of Knowledge</h2>
             <div className='text-lg font-bold '>
                 <a href="/home" className='hover:text-cyan-500' >Home</a>

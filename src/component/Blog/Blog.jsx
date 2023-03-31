@@ -1,9 +1,13 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import './Blog.css'
+
 const Blog = (props) => {
-   
-    const { authorImg, authorName, blogTitle, coverImg, hashtag, publishDate, readTime } = props.blog;
-    console.log(hashtag);
+
+    const {id, authorImg, authorName, blogTitle, coverImg, hashtag, publishDate, readTime } = props.blog;
+    const handleBookmark = props.handleBookmark;
+    //console.log(handleBookmark);
     return (
         <div className='blog my-8'>
             <img className='coverImg rounded-lg' src={coverImg} alt="" />
@@ -13,17 +17,19 @@ const Blog = (props) => {
                     <div>
                         <h5 className='text-xl font-bold'>{authorName}</h5>
                         <p className='text-base text-slate-400'>{publishDate}</p>
+
                     </div>
                 </div>
-                <div>
-                    <p className='text-xl text-slate-400'>{readTime} min read</p>
+                <div className='flex'>
+                    <p className='text-xl text-slate-400 pr-2'>{readTime} min read </p>
+                    <button onClick={() => handleBookmark(props.blog)}><img className='bookmark-img' src="icons8-bookmarks-64.png" alt="" /></button>
                 </div>
             </div>
             <h1 className='text-3xl mb-4'>{blogTitle}</h1>
-           <div className='flex gap-2'>
-             {
-                hashtag.map((tag) => <p className='text-base text-slate-400'>#{tag}</p>)
-            }
+            <div className='flex gap-2'>
+                {
+                    hashtag.map((tag) => <p className='text-base text-slate-400'>#{tag}</p>)
+                }
             </div>
             <button className='text-violet-800 underline mb-4'>Mark as read</button>
             <hr />

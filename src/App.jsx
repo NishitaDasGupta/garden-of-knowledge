@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
     
-    <div className='body my-12 mx-28'>
+    <div className='body my-12 mx-5 md:mx-20'>
     <Header></Header>
     <Blogs></Blogs>
     </div>
