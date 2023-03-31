@@ -7,6 +7,7 @@ const Blog = (props) => {
 
     const {id, authorImg, authorName, blogTitle, coverImg, hashtag, publishDate, readTime } = props.blog;
     const handleBookmark = props.handleBookmark;
+    const handleMarkAsRead = props.handleMarkAsRead;
     //console.log(handleBookmark);
     return (
         <div className='blog my-8'>
@@ -31,7 +32,7 @@ const Blog = (props) => {
                     hashtag.map((tag) => <p className='text-base text-slate-400'>#{tag}</p>)
                 }
             </div>
-            <button className='text-violet-800 underline mb-4'>Mark as read</button>
+            <button onClick={() => handleMarkAsRead(readTime)} className='text-violet-800 underline mb-4'>Mark as read</button>
             <hr />
         </div>
     );
