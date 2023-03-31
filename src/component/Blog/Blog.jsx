@@ -23,7 +23,7 @@ const Blog = (props) => {
                 </div>
                 <div className='flex'>
                     <p className='text-xl text-slate-400 pr-2'>{readTime} min read </p>
-                    <button onClick={() => handleBookmark(props.blog)}><img className='bookmark-img' src="icons8-bookmarks-64.png" alt="" /></button>
+                    <button className='p-2' onClick={() => handleBookmark(props.blog)}><img className='bookmark-img' src="icons8-bookmarks-64.png" alt="" /></button>
                 </div>
             </div>
             <h1 className='text-3xl mb-4'>{blogTitle}</h1>

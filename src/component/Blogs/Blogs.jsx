@@ -30,6 +30,7 @@ const Blogs = () => {
             .then(data => setBlogs(data))
     }, [])
 
+    
     useEffect(() => {
         const storedMarkReadTime = getMarkedRead();
         setMarkReadTime(storedMarkReadTime);
